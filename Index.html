@@ -1,18 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Generator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Generator</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <main>
     <h1>Generador de Código QR</h1>
-    <input type="text" id="urlInput" placeholder="Introduce la URL">
-    <button onclick="generateQR()">Generar QR</button>
+    <label for="url">Introduce la URL</label>
+    <input id="url" type="url" placeholder="https://ejemplo.com" />
+    <div class="controls">
+      <button id="generate">Generar QR</button>
+      <button id="download" disabled>Descargar PNG</button>
+    </div>
     <div id="qrcode"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-    <script src="script.js"></script>
+    <p class="note">La imagen se genera en el navegador. No se envía nada a servidores externos.</p>
+  </main>
+  <script src="qrcode.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
